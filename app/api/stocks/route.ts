@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getOHLCV } from '@/lib/api/rateLimiter'
 import { getIndicators } from '@/lib/quant/indicators'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams

@@ -3,6 +3,8 @@ import { fredAPI } from '@/lib/api/fred'
 import { cache } from '@/lib/cache/redis'
 import { CACHE_TTL } from '@/lib/utils/constants'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
     const cacheKey = 'api:macro'

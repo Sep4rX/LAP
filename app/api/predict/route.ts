@@ -3,6 +3,8 @@ import { getOHLCV } from '@/lib/api/rateLimiter'
 import { finnhubAPI } from '@/lib/api/finnhub'
 import { EnsembleModel } from '@/lib/ml/ensembleModel'
 import { cache } from '@/lib/cache/redis'
+
+export const dynamic = 'force-dynamic'
 import { CACHE_TTL } from '@/lib/utils/constants'
 
 export async function GET(request: NextRequest) {
