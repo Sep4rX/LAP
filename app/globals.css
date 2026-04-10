@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: #0a0e1a;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+/* Bloomberg Terminal Aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff88;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Typography */
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Utility classes */
+.text-accent {
+  color: #00ff88;
+}
+
+.text-danger {
+  color: #ff3b5c;
+}
+
+.text-warning {
+  color: #f59e0b;
+}
+
+.text-info {
+  color: #38bdf8;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+.bg-background {
+  background-color: #0a0e1a;
+}
+
+.bg-surface {
+  background-color: #111827;
+}
+
+.border-accent {
+  border-color: #00ff88;
+}
+
+.border-danger {
+  border-color: #ff3b5c;
+}
+
+/* Focus states */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid #00ff88;
+  outline-offset: 2px;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Selection color */
+::selection {
+  background-color: #00ff88;
+  color: #0a0e1a;
+}
