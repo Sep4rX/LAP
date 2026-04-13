@@ -62,7 +62,7 @@ export const finnhubAPI = {
 
       const news: NewsItem[] = (response.data || [])
         .slice(0, limit)
-        .map((item: any) => ({
+        .map((item: { headline: string; summary?: string; url: string; source: string; datetime: number }) => ({
           ticker,
           headline: item.headline,
           description: item.summary || '',

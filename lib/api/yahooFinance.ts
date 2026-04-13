@@ -39,7 +39,7 @@ export const yahooFinanceAPI = {
     }
   },
 
-  async getOHLCV(ticker: string, period: string = '60d'): Promise<OHLCVData[] | null> {
+  async getOHLCV(ticker: string): Promise<OHLCVData[] | null> {
     try {
       const cacheKey = cache.getCacheKey.ohlcv(`yahoo:${ticker}`)
       const cached = await cache.get<OHLCVData[]>(cacheKey)

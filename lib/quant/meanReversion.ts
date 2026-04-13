@@ -69,7 +69,6 @@ export function calculateDonchianChannels(
 
   const current = ohlcv[ohlcv.length - 1]
   const previous = ohlcv[ohlcv.length - 2]
-  const channel = calculatePriceChannel(ohlcv, period)
 
   const prevChannel = calculatePriceChannel(ohlcv.slice(0, -1), period)
 

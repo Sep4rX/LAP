@@ -1,4 +1,4 @@
-import { OHLCVData, TechnicalIndicators, PredictionResult } from '@/types'
+import { OHLCVData, PredictionResult } from '@/types'
 import { HiddenMarkovModel } from '@/lib/ml/hmm'
 import { LSTMPredictor } from '@/lib/ml/lstm'
 import { RandomForest } from '@/lib/ml/randomForest'
@@ -60,7 +60,7 @@ export class EnsembleModel {
     // Train with dummy data for RF
     const featureHistory = Array(20)
       .fill(featureVector)
-      .map((f, i) => ({
+      .map((f) => ({
         ...f,
         rsi: f.rsi + (Math.random() - 0.5) * 10,
       }))

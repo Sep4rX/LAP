@@ -54,7 +54,7 @@ export class RandomForest {
       confidence = downConfidence
     }
 
-    const featureImportance = this.calculateFeatureImportance(features)
+    const featureImportance = this.calculateFeatureImportance()
 
     return { direction, confidence, featureImportance }
   }
@@ -187,7 +187,7 @@ export class RandomForest {
     return indices
   }
 
-  private calculateFeatureImportance(features: Record<string, number>): Record<string, number> {
+  private calculateFeatureImportance(): Record<string, number> {
     const importance: Record<string, number> = {}
     for (const feature of this.features) {
       importance[feature] = Math.random() * 0.3 + 0.1 // Simplified

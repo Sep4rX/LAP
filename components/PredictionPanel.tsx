@@ -1,7 +1,6 @@
 'use client'
 
 import { PredictionResult } from '@/types'
-import { cn } from '@/lib/utils/cn'
 import { COLORS } from '@/lib/utils/constants'
 
 interface PredictionPanelProps {

@@ -6,7 +6,6 @@ import { SignalTable } from '@/components/SignalTable'
 import { VolatilityChart } from '@/components/VolatilityChart'
 import { CorrelationMatrix } from '@/components/CorrelationMatrix'
 import { MacroPanel } from '@/components/MacroPanel'
-import { NewsFeed } from '@/components/NewsFeed'
 import { RiskMetrics } from '@/components/RiskMetrics'
 import { AlertsFeed } from '@/components/AlertsFeed'
 import { Watchlist } from '@/components/Watchlist'
@@ -15,8 +14,6 @@ import { BacktestPanel } from '@/components/BacktestPanel'
 import { InsiderActivity } from '@/components/InsiderActivity'
 import { EarningsCalendar } from '@/components/EarningsCalendar'
 import { useMacroData } from '@/hooks/useMacroData'
-import { COLORS } from '@/lib/utils/constants'
-import { Menu } from 'lucide-react'
 
 export default function Home() {
   const { macro, isLoading: macroLoading } = useMacroData()
@@ -37,7 +34,7 @@ export default function Home() {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => setActiveTab(tab.id as 'dashboard' | 'signals' | 'analysis' | 'portfolio')}
               className={`pb-2 transition whitespace-nowrap ${
                 activeTab === tab.id
                   ? `border-b-2 border-accent text-accent`

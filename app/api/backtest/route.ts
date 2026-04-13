@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getOHLCV } from '@/lib/api/rateLimiter'
-import { backtest, calculateReturns } from '@/lib/quant/backtest'
+import { backtest } from '@/lib/quant/backtest'
 
 export async function GET(request: NextRequest) {
   try {

@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { fredAPI } from '@/lib/api/fred'
 import { cache } from '@/lib/cache/redis'
 import { CACHE_TTL } from '@/lib/utils/constants'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const cacheKey = 'api:macro'
     const cached = await cache.get(cacheKey)

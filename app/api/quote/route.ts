@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getQuote } from '@/lib/api/rateLimiter'
-import { QuoteData } from '@/types'
 
 export async function GET(request: NextRequest) {
   try {

@@ -25,7 +25,7 @@ export const newsAPI = {
       })
 
       const news: NewsItem[] = (response.data.articles || []).map(
-        (article: any) => ({
+        (article: { title: string; description?: string; url: string; source: { name: string }; publishedAt: string }) => ({
           ticker,
           headline: article.title,
           description: article.description || '',
@@ -55,7 +55,7 @@ export const newsAPI = {
         timeout: 5000,
       })
 
-      return (response.data.articles || []).map((article: any) => ({
+      return (response.data.articles || []).map((article: { title: string; description?: string; url: string; source: { name: string }; publishedAt: string }) => ({
         ticker: 'MARKET',
         headline: article.title,
         description: article.description || '',

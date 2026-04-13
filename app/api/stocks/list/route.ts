@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { STOCK_UNIVERSE } from '@/lib/utils/stockUniverse'
 import { getAllQuotes, getAllOHLCV } from '@/lib/api/rateLimiter'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const tickers = STOCK_UNIVERSE.map(s => s.ticker)
 

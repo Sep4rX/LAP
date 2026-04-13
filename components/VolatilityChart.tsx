@@ -22,7 +22,7 @@ export function VolatilityChart() {
           <YAxis stroke={COLORS.MUTED} />
           <Tooltip
             contentStyle={{ backgroundColor: COLORS.SURFACE, border: `1px solid ${COLORS.BORDER}` }}
-            formatter={(value: any) => value.toFixed(2)}
+            formatter={(value: number) => value.toFixed(2)}
           />
           <Line
             type="monotone"

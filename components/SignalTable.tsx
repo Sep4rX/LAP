@@ -1,7 +1,6 @@
 'use client'
 
 import { COLORS } from '@/lib/utils/constants'
-import { Activity, AlertTriangle, TrendingUp, BarChart2 } from 'lucide-react'
 
 export function SignalTable() {
   const signals = [

@@ -80,13 +80,13 @@ export const alphaVantageAPI = {
       const timeSeries = response.data['Time Series (Daily Adjusted)'] || {}
       const ohlcv: OHLCVData[] = Object.entries(timeSeries)
         .slice(0, 60)
-        .map(([date, data]: any) => ({
+        .map(([date, data]) => ({
           timestamp: new Date(date).getTime(),
-          open: parseFloat(data['1. open']),
-          high: parseFloat(data['2. high']),
-          low: parseFloat(data['3. low']),
-          close: parseFloat(data['4. close']),
-          volume: parseInt(data['6. volume']),
+          open: parseFloat((data as Record<string, string>)['1. open']),
+          high: parseFloat((data as Record<string, string>)['2. high']),
+          low: parseFloat((data as Record<string, string>)['3. low']),
+          close: parseFloat((data as Record<string, string>)['4. close']),
+          volume: parseInt((data as Record<string, string>)['6. volume']),
         }))
         .reverse()
 
@@ -123,7 +123,7 @@ export const alphaVantageAPI = {
 
       const rsiData = rsiResponse.data['Technical Analysis: RSI']
       if (rsiData) {
-        const latestRSI = Object.values(rsiData)[0] as any
+        const latestRSI = Object.values(rsiData)[0] as Record<string, string>
         indicators.rsi = parseFloat(latestRSI['RSI'])
       }
 

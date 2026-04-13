@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { cn } from '@/lib/utils/cn'
 import { COLORS } from '@/lib/utils/constants'
 
@@ -9,7 +8,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ className }: NavbarProps) {
-  const [estTime, setEstTime] = useState(new Date().toLocaleTimeString())
+  const estTime = new Date().toLocaleTimeString()
 
   return (
     <nav className={cn(
